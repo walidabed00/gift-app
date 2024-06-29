@@ -6,11 +6,14 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  const MaterialApp(
+    return   MaterialApp(
+      theme: ThemeData(fontFamily: 'Bree Serif', scaffoldBackgroundColor: Color(0XFFFFF4E5) ),
+      debugShowCheckedModeBanner: false,
       home: CurrencyConverterPage(),
     );
   }
