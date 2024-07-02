@@ -91,8 +91,14 @@ flutter:
     - assets/images/wave.svg
     - assets/images/male.png
     - assets/images/female.png
+    - assets/images/gift.png
+    - assets/images/charts.png
+    - assets/images/girls.png
 
   fonts:
     - family: Bree Serif
       fonts:
         - asset: fonts/BreeSerif-Regular.ttf
+    - family: Ethos Nova Heavy
+      fonts:
+        - asset: fonts/EthosNova-Heavy.ttf

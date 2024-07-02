@@ -1,4 +1,9 @@
+import 'dart:math';
+import 'dart:ui';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CurrencyConverterPage extends StatelessWidget {
@@ -6,84 +11,219 @@ class CurrencyConverterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
+    // Example: Using 50% width and 20% height
+    final double buttonWidth = screenWidth * 0.5;
+    final double buttonHeight = screenHeight * 0.2;
+
     return Scaffold(
         body: SafeArea(
       child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
         SizedBox(
+          
           width: double.infinity,
-          height: 350,
+          height: screenHeight * 0.5,
+          
           child: Padding(
-            padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+            padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
             child: Card(
+              elevation: 0,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(25)),
                 color: Colors.white,
                 child: Padding(
-                  padding: EdgeInsets.fromLTRB(20, 20, 0, 0),
+                  padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SvgPicture.asset('assets/images/logo.svg'),
                       SizedBox(
                         height: 40,
                       ),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text('Hello', style: TextStyle(fontSize: 30)),
-                          SizedBox(width: 8),
-                          SvgPicture.asset('assets/images/wave.svg'),
-                          SizedBox(width: 8),
-                          Text(
-                            'Justin',
-                            style: TextStyle(fontSize: 30),
-                          )
-                        ],
+                      Container(
+                        child: Column(
+                          children: [
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text('Hello', style: TextStyle(fontSize: 35,color: Color(0XFF2C2C2C))),
+                                SizedBox(width: 8),
+                                SvgPicture.asset('assets/images/wave.svg'),
+                                SizedBox(width: 8),
+                                Text(
+                                  'Justin',
+                                  style: TextStyle(fontSize: 35, color: Color(0XFF2C2C2C)),
+                                )
+                              ],
+                            ),
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Image(
+                                  image: AssetImage('assets/images/male.png'),
+                                  width: 40,
+                                ),
+                                SizedBox(
+                                  width: 8,
+                                ),
+                                Text(
+                                  'Do Not Forget That',
+                                  style: TextStyle(fontSize: 35, color: Color(0XFF2C2C2C)),
+                                )
+                              ],
+                            ),
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "Aisling's",
+                                  style: TextStyle(
+                                      fontSize: 35, color: Color(0XFFF4622E)),
+                                ),
+                                SizedBox(
+                                  width: 8,
+                                ),
+                                Image(
+                                  image: AssetImage('assets/images/female.png'),
+                                  width: 40,
+                                ),
+                                SizedBox(
+                                  width: 8,
+                                ),
+                                Text(
+                                  "Birthday",
+                                  style: TextStyle(fontSize: 35, color: Color(0XFF2C2C2C)),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "Is In",
+                                  style: TextStyle(fontSize: 35, color: Color(0XFF2C2C2C)),
+                                ),
+                                SizedBox(
+                                  width: 8,
+                                ),
+                                Text(
+                                  "21 Da",
+                                  style: TextStyle(
+                                      fontSize: 35,
+                                      color: Color(0XFF2C2C2C),
+                                      decoration: TextDecoration.underline),
+                                      
+                                ),
+                                Text('y', style: TextStyle( fontSize: 35,
+                                      color: Color(0XFF2C2C2C),),),
+                                      Text('s', style: TextStyle( fontSize: 35,
+                                      color: Color(0XFF2C2C2C),
+                                      decoration: TextDecoration.underline),)
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 45,
+                        
                       ),
                       Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                      
                         children: [
-                          Image(image: AssetImage('assets/images/male.png'),width: 35,),
+                          SizedBox(
+                            
+                            height: 30,
+                            child: ElevatedButton(
+                              
+                              onPressed: () {},
+                              iconAlignment: IconAlignment.start,
+                              child: Row(
+                               
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Image(
+                                    image: AssetImage('assets/images/gift.png'),
+                                    width: 30,
+                                  ),
+                                  SizedBox(
+                                    width: 8,
+                                  ),
+                                  Text(
+                                    'Send A Gift',
+                                    style: TextStyle(
+                                        color: Color(0XFFFFFFFF),
+                                        fontFamily: 'Ethos Nova Heavy',
+                                        fontSize: 12,
+                                        
+                                  ),
+                              ),],
+                              ),
+                              style: ButtonStyle(
+                                  backgroundColor: MaterialStateProperty.all(
+                                      Color(0XFFF4622E)),
+                                  shape: MaterialStatePropertyAll(
+                                      RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(30)),
+                                  ),
+                                  padding: WidgetStatePropertyAll(
+                                      EdgeInsets.fromLTRB(0, 3, 20, 3)),
+                                      elevation: WidgetStatePropertyAll(0)),
+                                      
+                            ),
+                          ),
                           SizedBox(
                             width: 8,
                           ),
-                          Text(
-                            'Do Not Forget That',
-                            style: TextStyle(fontSize: 30),
-                          )
-                        ],
-                      ),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(
-                            "Aisling's",
-                            style: TextStyle(fontSize: 30, color: Color(0XFFF4622E)),
-                          ),
                           SizedBox(
-                            width: 8,
-                          ),
-                        Image(image: AssetImage('assets/images/female.png'),width: 35,),
-                            SizedBox(
-                            width: 8,
-                          ),
-                          Text(
-                            "Birthday",
-                            style: TextStyle(fontSize: 30),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(
-                            "Is In",
-                            style: TextStyle(fontSize: 30),
-                          ),
-                          SizedBox(
-                            width: 8,
-                          ),
-                          Text(
-                            "21 Days",
-                            style: TextStyle(fontSize: 30, decoration: TextDecoration.underline),
+                            
+                            height: 30,
+                            child: Container(
+                              decoration: BoxDecoration(boxShadow: [
+                                BoxShadow(
+                                  color: Color(0XFF2C2C2C).withOpacity(0.08),
+                                  spreadRadius: 1,
+                                  blurRadius: 22,
+                                  offset: Offset(0, -1),
+                                )
+                              ]),
+                              child: ElevatedButton(
+                                
+                                  onPressed: () {},
+                                  iconAlignment: IconAlignment.start,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      Image(
+                                        image:
+                                            AssetImage('assets/images/charts.png'),
+                                        width: 20,
+                                      ),
+                                      SizedBox(
+                                        width: 8,
+                                        
+                                      ),
+                                      Text(
+                                        'Get 20 Giftdrop Points',
+                                        style: TextStyle(
+                                            color: Color(0XFF2C2C2C),
+                                            fontFamily: 'Ethos Nova Heavy',
+                                            fontSize: 12),
+                                      ),
+                                    ],
+                                  ),
+                                  
+                                  style: ButtonStyle(
+                                    elevation: WidgetStatePropertyAll(0),
+                                    
+                                      backgroundColor:
+                                          MaterialStateProperty.all(Colors.white),
+                                      padding: WidgetStatePropertyAll(
+                                          EdgeInsets.fromLTRB(15, 0, 20, 0))),),
+                            ),
                           ),
                         ],
                       ),
@@ -92,6 +232,52 @@ class CurrencyConverterPage extends StatelessWidget {
                 )),
           ),
         ),
+        SizedBox(
+          width: double.infinity,
+          height: screenHeight * 0.1,
+          child: Padding(
+            padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+            child: Card(
+               elevation: 0,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30)),
+                color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, crossAxisAlignment: CrossAxisAlignment.center, children: [
+                    Container(
+                      width: screenWidth * 0.6,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'You have ',
+                                style: TextStyle(fontSize: 16,letterSpacing: -0.7, fontFamily: 'Ethos Nova Heavy', color: Color(0XFF2C2C2C)),
+                                
+                              ),
+                             
+                              Container(height:22, decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Color(0XFFF4622E), width: 1.5)),), child: Text('2Gifts', style: TextStyle(fontSize: 16,letterSpacing: -0.7, decoration: TextDecoration.none, color: Color(0XFFF4622E), fontFamily: 'Ethos Nova Heavy', decorationColor: Color(0XFFF4622E), decorationThickness: 2 ),)),
+                             
+                              Text(
+                                ' Scheduled to',
+                                style: TextStyle(fontSize: 16, fontFamily: 'Ethos Nova Heavy', letterSpacing: -0.7, color: Color(0XFF2C2C2C)),
+                              ),
+                            ],
+                          
+                          ),
+                          Text('be sent this month', style: TextStyle(fontSize: 16,letterSpacing: -0.7, fontFamily: 'Ethos Nova Heavy', color: Color(0XFF2C2C2C)),)
+                        ],
+                      ),
+                    
+                    ),
+                  
+                    Image(image: AssetImage('assets/images/girls.png'), width: 80,)
+                  ]),
+                ),
+            )))
       ]),
     ));
   }
