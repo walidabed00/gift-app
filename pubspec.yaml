@@ -94,6 +94,14 @@ flutter:
     - assets/images/gift.png
     - assets/images/charts.png
     - assets/images/girls.png
+    - assets/images/money.png
+    - assets/images/smilyFace.png
+    - assets/images/Home.png
+    - assets/images/Profile.png
+    - assets/images/Matcher.png
+    - assets/images/Events.png
+    - assets/images/Friends.png
+    - assets/images/
 
   fonts:
     - family: Bree Serif
