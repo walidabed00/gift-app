@@ -1,5 +1,4 @@
-import 'dart:ffi';
-import 'dart:math';
+
 import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
@@ -30,7 +29,7 @@ class _CurrencyConverterPage extends State<CurrencyConverterPage> {
         bottomNavigationBar: Padding(
           padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
           child: Container(
-            height: screenHeight * 0.11,
+            height: screenHeight * 0.10,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -163,7 +162,7 @@ class _CurrencyConverterPage extends State<CurrencyConverterPage> {
           child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
             SizedBox(
               width: double.infinity,
-              height: screenHeight * 0.49,
+              height: screenHeight * 0.50,
               child: Padding(
                 padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
                 child: Card(
@@ -303,10 +302,10 @@ class _CurrencyConverterPage extends State<CurrencyConverterPage> {
                                       Image(
                                         image: AssetImage(
                                             'assets/images/gift.png'),
-                                        width: 30,
+                                        width: 28,
                                       ),
                                       SizedBox(
-                                        width: 8,
+                                        width: 5,
                                       ),
                                       Text(
                                         'Send A Gift',
@@ -333,10 +332,10 @@ class _CurrencyConverterPage extends State<CurrencyConverterPage> {
                                 ),
                               ),
                               SizedBox(
-                                width: 8,
+                                width: 5,
                               ),
                               SizedBox(
-                                height: 30,
+                                height: 28,
                                 child: Container(
                                   decoration: BoxDecoration(boxShadow: [
                                     BoxShadow(
@@ -356,10 +355,10 @@ class _CurrencyConverterPage extends State<CurrencyConverterPage> {
                                         Image(
                                           image: AssetImage(
                                               'assets/images/charts.png'),
-                                          width: 20,
+                                          width: 15,
                                         ),
                                         SizedBox(
-                                          width: 8,
+                                          width: 5,
                                         ),
                                         Text(
                                           'Get 20 Giftdrop Points',
@@ -398,7 +397,7 @@ class _CurrencyConverterPage extends State<CurrencyConverterPage> {
                           borderRadius: BorderRadius.circular(30)),
                       color: Colors.white,
                       child: Padding(
-                        padding: const EdgeInsets.all(20.0),
+                        padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
                         child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -498,7 +497,7 @@ class _CurrencyConverterPage extends State<CurrencyConverterPage> {
                                     width: 35,
                                   ),
                                   Container(
-                                    width: screenWidth * 0.4,
+                                    width: screenWidth * 0.45,
                                     height: 35,
                                     decoration: BoxDecoration(
                                         border: Border.all(
