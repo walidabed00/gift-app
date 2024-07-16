@@ -21,143 +21,10 @@ class _CurrencyConverterPage extends State<CurrencyConverterPage> {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
 
-    // Example: Using 50% width and 20% height
-    final double buttonWidth = screenWidth * 0.5;
-    final double buttonHeight = screenHeight * 0.2;
+   
 
     return Scaffold(
-        bottomNavigationBar: Padding(
-          padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-          child: Container(
-            height: screenHeight * 0.10,
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  child: TextButton(
-                    onPressed: () {
-                      setState(() {
-                        page = "Home";
-                      });
-                    },
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image(
-                          image: AssetImage(
-                            page == "Home"
-                                ? 'assets/images/Home.png'
-                                : 'assets/images/HomeInactive.png',
-                          ),
-                          width: 40,
-                        ),
-                        Text(
-                          'Home',
-                          style: TextStyle(
-                              fontFamily: 'Ethos Nova Heavy',
-                              fontSize: 11,
-                              color: Color(
-                                  page == "Home" ? 0XFFF4622E : 0XFF0D0D0D)),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Container(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image(
-                        image: AssetImage(
-                          'assets/images/Matcher.png',
-                        ),
-                        width: 40,
-                      ),
-                      Text(
-                        'Matcher',
-                        style: TextStyle(
-                            fontFamily: 'Ethos Nova Heavy',
-                            fontSize: 11,
-                            color: Color(0XFF0D0D0D)),
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  child: TextButton(
-                    onPressed: () {
-                      setState(() {
-                        page = "Friends";
-                      });
-                    },
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image(
-                          image: AssetImage(
-                            page == "Friends"
-                                ? 'assets/images/FriendsActive.png'
-                                : 'assets/images/Friends.png',
-                          ),
-                          width: 40,
-                        ),
-                        Text(
-                          'Friends',
-                          style: TextStyle(
-                              fontFamily: 'Ethos Nova Heavy',
-                              fontSize: 11,
-                              color: Color(
-                                  page == "Friends" ? 0XFFF4622E : 0XFF0D0D0D)),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Container(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image(
-                        image: AssetImage(
-                          'assets/images/Events.png',
-                        ),
-                        width: 40,
-                      ),
-                      Text(
-                        'Events',
-                        style: TextStyle(
-                            fontFamily: 'Ethos Nova Heavy',
-                            fontSize: 11,
-                            color: Color(0XFF0D0D0D)),
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image(
-                        image: AssetImage(
-                          'assets/images/Profile.png',
-                        ),
-                        width: 40,
-                      ),
-                      Text(
-                        'Profile',
-                        style: TextStyle(
-                            fontFamily: 'Ethos Nova Heavy',
-                            fontSize: 11,
-                            color: Color(0XFF0D0D0D)),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
+        
         body: SafeArea(
           child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
             SizedBox(
@@ -181,118 +48,122 @@ class _CurrencyConverterPage extends State<CurrencyConverterPage> {
                             height: 35,
                           ),
                           Container(
-                            child: Column(
-                              children: [
-                                Row(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Text('Hello',
+                            child: SizedBox(
+                              width: screenWidth * 0.80,
+                              child: Column(
+                                children: [
+                                  Row(
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    children: [
+                                      Text('Hello',
+                                          style: TextStyle(
+                                              fontSize: 28,
+                                              color: Color(0XFF2C2C2C))),
+                                      SizedBox(width: 8),
+                                      SvgPicture.asset('assets/images/wave.svg'),
+                                      SizedBox(width: 8),
+                                      Text(
+                                        'Justin',
                                         style: TextStyle(
-                                            fontSize: 32,
-                                            color: Color(0XFF2C2C2C))),
-                                    SizedBox(width: 8),
-                                    SvgPicture.asset('assets/images/wave.svg'),
-                                    SizedBox(width: 8),
-                                    Text(
-                                      'Justin',
-                                      style: TextStyle(
-                                          fontSize: 32,
-                                          color: Color(0XFF2C2C2C)),
-                                    )
-                                  ],
-                                ),
-                                Row(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Image(
-                                      image:
-                                          AssetImage('assets/images/male.png'),
-                                      width: 35,
-                                    ),
-                                    SizedBox(
-                                      width: 8,
-                                    ),
-                                    Text(
-                                      'Do Not Forget That',
-                                      style: TextStyle(
-                                          fontSize: 32,
-                                          color: Color(0XFF2C2C2C)),
-                                    )
-                                  ],
-                                ),
-                                Row(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      "Aisling's",
-                                      style: TextStyle(
-                                          fontSize: 32,
-                                          color: Color(0XFFF4622E)),
-                                    ),
-                                    SizedBox(
-                                      width: 8,
-                                    ),
-                                    Image(
-                                      image: AssetImage(
-                                          'assets/images/female.png'),
-                                      width: 35,
-                                    ),
-                                    SizedBox(
-                                      width: 8,
-                                    ),
-                                    Text(
-                                      "Birthday",
-                                      style: TextStyle(
-                                          fontSize: 32,
-                                          color: Color(0XFF2C2C2C)),
-                                    ),
-                                  ],
-                                ),
-                                Row(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      "Is In",
-                                      style: TextStyle(
-                                          fontSize: 32,
-                                          color: Color(0XFF2C2C2C)),
-                                    ),
-                                    SizedBox(
-                                      width: 8,
-                                    ),
-                                    Text(
-                                      "21 Da",
-                                      style: TextStyle(
-                                          fontSize: 32,
-                                          color: Color(0XFF2C2C2C),
-                                          decoration: TextDecoration.underline),
-                                    ),
-                                    Text(
-                                      'y',
-                                      style: TextStyle(
-                                        fontSize: 32,
-                                        color: Color(0XFF2C2C2C),
+                                            fontSize: 28,
+                                            color: Color(0XFF2C2C2C)),
+                                      )
+                                    ],
+                                  ),
+                                  Row(
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    children: [
+                                      Image(
+                                        image:
+                                            AssetImage('assets/images/male.png'),
+                                        width: 35,
                                       ),
-                                    ),
-                                    Text(
-                                      's',
-                                      style: TextStyle(
-                                          fontSize: 32,
+                                      SizedBox(
+                                        width: 8,
+                                      ),
+                                      Text(
+                                        'Do Not Forget That',
+                                        style: TextStyle(
+                                            fontSize: 28,
+                                            color: Color(0XFF2C2C2C)),
+                                      )
+                                    ],
+                                  ),
+                                  Row(
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        "Aisling's",
+                                        style: TextStyle(
+                                            fontSize: 28,
+                                            color: Color(0XFFF4622E)),
+                                      ),
+                                      SizedBox(
+                                        width: 8,
+                                      ),
+                                      Image(
+                                        image: AssetImage(
+                                            'assets/images/female.png'),
+                                        width: 35,
+                                      ),
+                                      SizedBox(
+                                        width: 8,
+                                      ),
+                                      Text(
+                                        "Birthday",
+                                        style: TextStyle(
+                                            fontSize: 28,
+                                            color: Color(0XFF2C2C2C)),
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        "Is In",
+                                        style: TextStyle(
+                                            fontSize: 28,
+                                            color: Color(0XFF2C2C2C)),
+                                      ),
+                                      SizedBox(
+                                        width: 8,
+                                      ),
+                                      Text(
+                                        "21 Da",
+                                        style: TextStyle(
+                                            fontSize: 28,
+                                            color: Color(0XFF2C2C2C),
+                                            decoration: TextDecoration.underline),
+                                      ),
+                                      Text(
+                                        'y',
+                                        style: TextStyle(
+                                          fontSize: 28,
                                           color: Color(0XFF2C2C2C),
-                                          decoration: TextDecoration.underline),
-                                    )
-                                  ],
-                                ),
-                              ],
+                                        ),
+                                      ),
+                                      Text(
+                                        's',
+                                        style: TextStyle(
+                                            fontSize: 28,
+                                            color: Color(0XFF2C2C2C),
+                                            decoration: TextDecoration.underline),
+                                      )
+                                    ],
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                           SizedBox(
-                            height: 45,
+                            height: 35,
                           ),
                           Row(
                             children: [
                               SizedBox(
                                 height: 30,
+                                width: screenWidth * 0.32,
                                 child: ElevatedButton(
                                   onPressed: () {},
                                   iconAlignment: IconAlignment.start,
@@ -312,7 +183,7 @@ class _CurrencyConverterPage extends State<CurrencyConverterPage> {
                                         style: TextStyle(
                                           color: Color(0XFFFFFFFF),
                                           fontFamily: 'Ethos Nova Heavy',
-                                          fontSize: 12,
+                                          fontSize: 10,
                                         ),
                                       ),
                                     ],
@@ -336,6 +207,7 @@ class _CurrencyConverterPage extends State<CurrencyConverterPage> {
                               ),
                               SizedBox(
                                 height: 28,
+                                width: screenWidth * 0.475,
                                 child: Container(
                                   decoration: BoxDecoration(boxShadow: [
                                     BoxShadow(
@@ -350,22 +222,25 @@ class _CurrencyConverterPage extends State<CurrencyConverterPage> {
                                     onPressed: () {},
                                     iconAlignment: IconAlignment.start,
                                     child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      mainAxisAlignment: MainAxisAlignment.start,
                                       children: [
                                         Image(
                                           image: AssetImage(
                                               'assets/images/charts.png'),
-                                          width: 15,
+                                          width: 13,
                                         ),
                                         SizedBox(
                                           width: 5,
                                         ),
-                                        Text(
-                                          'Get 20 Giftdrop Points',
-                                          style: TextStyle(
-                                              color: Color(0XFF2C2C2C),
-                                              fontFamily: 'Ethos Nova Heavy',
-                                              fontSize: 12),
+                                        SizedBox(
+                                          
+                                          child: Text(
+                                            'Get 20 Giftdrop Points',
+                                            style: TextStyle(
+                                                color: Color(0XFF2C2C2C),
+                                                fontFamily: 'Ethos Nova Heavy',
+                                                fontSize: 10),
+                                          ),
                                         ),
                                       ],
                                     ),
@@ -415,7 +290,7 @@ class _CurrencyConverterPage extends State<CurrencyConverterPage> {
                                         Text(
                                           'You have ',
                                           style: TextStyle(
-                                              fontSize: 16,
+                                             fontSize: 14,
                                               letterSpacing: -0.7,
                                               fontFamily: 'Ethos Nova Heavy',
                                               color: Color(0XFF2C2C2C)),
@@ -431,7 +306,7 @@ class _CurrencyConverterPage extends State<CurrencyConverterPage> {
                                             child: Text(
                                               '2Gifts',
                                               style: TextStyle(
-                                                  fontSize: 16,
+                                                 fontSize: 14,
                                                   letterSpacing: -0.7,
                                                   decoration:
                                                       TextDecoration.none,
@@ -445,7 +320,7 @@ class _CurrencyConverterPage extends State<CurrencyConverterPage> {
                                         Text(
                                           ' Scheduled to',
                                           style: TextStyle(
-                                              fontSize: 16,
+                                             fontSize: 14,
                                               fontFamily: 'Ethos Nova Heavy',
                                               letterSpacing: -0.7,
                                               color: Color(0XFF2C2C2C)),
@@ -455,7 +330,7 @@ class _CurrencyConverterPage extends State<CurrencyConverterPage> {
                                     Text(
                                       'be sent this month',
                                       style: TextStyle(
-                                          fontSize: 16,
+                                         fontSize: 14,
                                           letterSpacing: -0.7,
                                           fontFamily: 'Ethos Nova Heavy',
                                           color: Color(0XFF2C2C2C)),
@@ -705,7 +580,7 @@ class _CurrencyConverterPage extends State<CurrencyConverterPage> {
                                 Text(
                                   budget == 'Weekly' ? "\$53" : '\$200',
                                   style: TextStyle(
-                                      fontSize: 70,
+                                      fontSize: 50,
                                       letterSpacing: -0.3,
                                       color: Color(0XFF6BF4C1)),
                                 ),
